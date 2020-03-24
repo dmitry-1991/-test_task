@@ -1,0 +1,30 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"extensions/v1beta1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx"},"name":"ingress-nginx","namespace":"default"},"spec":{"rules":[{"http":{"paths":[{"backend":{"serviceName":"deployment-nginx","servicePort":80},"path":"/nginx"}]}}]}}
+    kubernetes.io/ingress.class: nginx
+  creationTimestamp: "2020-03-24T19:26:17Z"
+  generation: 1
+  name: ingress-nginx
+  namespace: default
+  resourceVersion: "14684"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/ingress-nginx
+  uid: d2df9e0a-0fbd-4606-a0f8-185b9a2f0802
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: deployment-nginx
+          servicePort: 80
+        path: /nginx
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.0.2.15

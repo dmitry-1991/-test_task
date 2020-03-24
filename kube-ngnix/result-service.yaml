@@ -1,0 +1,31 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"service-nginx","namespace":"default"},"spec":{"ports":[{"port":80}],"selector":{"app":"my-nginx"},"type":"NodePort"}}
+  creationTimestamp: "2020-03-24T19:37:07Z"
+  name: service-nginx
+  namespace: default
+  resourceVersion: "16129"
+  selfLink: /api/v1/namespaces/default/services/service-nginx
+  uid: 61a59229-c978-47d4-8de8-d87641199a80
+spec:
+  clusterIP: 10.111.143.56
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30856
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: my-nginx
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+
